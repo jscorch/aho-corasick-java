@@ -61,7 +61,7 @@ catch(IOException ex) {
 
 Once `processStream()` has been called on the PatternMatcher, it will return in one of three ways:
 - It will fully process the stream, calling `done()` on the PatternMatchOutputProcessor passed it, and then return.
-- `stop()` is called on the PatternMatcher. Note that unless this is done from a separate thread, the only opportunity to call `stop()` will be when the patternFound() method of PatternMatchOutputProcessor is called back.
+- `stop()` is called on the PatternMatcher. Note that unless this is done from a separate thread, the only opportunity to call `stop()` will be when the `patternFound()` method of PatternMatchOutputProcessor is called back.
 - `processStream()` throws an IOException while reading the character stream it's been called with.
 
 Once `processStream()` returns, you can call it again to process another character stream. The PatternMatcher will reset itself, including the stream position it reports.
